@@ -1,0 +1,33 @@
+{
+  "name": "pretzl",
+  "version": "1.0.0",
+  "description": "js test framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "babel": "./node_modules/.bin/babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camjw/Pretzl.git"
+  },
+  "keywords": [
+    "pretzl"
+  ],
+  "author": "cameron whitehead, jon urry, daniel stephenson, aiman wahid, nic giles, andres faraone-pirie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camjw/Pretzl/issues"
+  },
+  "homepage": "https://github.com/camjw/Pretzl#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-new-target": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
