@@ -1,5 +1,4 @@
-import { fizzBuzz } from '../src/fizzbuzz';
-import { bite } from 'pretzl';
+var fizzbuzz = require("../lib/fizzbuzz.js")
 
 bite(fizzBuzz(1)).toEqual(1);
 bite(fizzBuzz(2)).toEqual(2);
