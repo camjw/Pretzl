@@ -2,7 +2,7 @@
   "name": "pretzl",
   "version": "1.0.0",
   "description": "js test framework",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "node tests",
     "babel": "./node_modules/.bin/babel src --out-dir lib"

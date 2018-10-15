@@ -1,8 +1,5 @@
-const bag = (expression, callback) => {
-  console.log(expression);
-  callback();
-};
+import { expectation as ex } from './expectation';
 
-const bite = operand => {
-  return new Expectation(operand);
+export const bite = operand => {
+  return new ex.Expectation(operand);
 };

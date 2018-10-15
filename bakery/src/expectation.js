@@ -1,6 +1,6 @@
 import { toEqual as toEqualMatcher } from './matchers/toEqual';
 
-class Expectation {
+export class Expectation {
   constructor(operand) {
     this.operand = operand;
   }
