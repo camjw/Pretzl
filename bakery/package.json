@@ -1,0 +1,22 @@
+{
+  "name": "pretzl",
+  "version": "1.0.0",
+  "description": "js test framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camjw/Pretzl.git"
+  },
+  "keywords": [
+    "pretzl"
+  ],
+  "author": "cameron whitehead, jon urry, daniel stephenson, aiman wahid, nic giles, andres faraone-pirie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camjw/Pretzl/issues"
+  },
+  "homepage": "https://github.com/camjw/Pretzl#readme"
+}
