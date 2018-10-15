@@ -1,0 +1,25 @@
+{
+  "name": "boulangerie",
+  "version": "1.0.0",
+  "description": "test playground for pretzl",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/camjw/Pretzl.git"
+  },
+  "keywords": [
+    "pretzl"
+  ],
+  "author": "cameron whitehead, jon urry, daniel stephenson, aiman wahid, nic giles, andres faraone-pirie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camjw/Pretzl/issues"
+  },
+  "homepage": "https://github.com/camjw/Pretzl#readme"
+}
