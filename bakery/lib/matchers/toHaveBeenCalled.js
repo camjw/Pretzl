@@ -7,14 +7,14 @@ exports.toHaveBeenEatenMatcher = void 0;
 
 var _colour = require("../colour");
 
-const toHaveBeenEatenMatcher = (obj, method) => {
-  if (obj._count[method] > 0) {
+const toHaveBeenEatenMatcher = (mock, method) => {
+  if (mock._count[method] > 0) {
     console.log(_colour.FgGreen, 'Yum!', _colour.Reset);
   } else {
     console.log(_colour.FgRed, `Yuck!`, _colour.Reset);
   }
 
-  obj._resetCount(method);
+  mock._resetCount(method);
 };
 
 exports.toHaveBeenEatenMatcher = toHaveBeenEatenMatcher;
