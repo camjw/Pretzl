@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FgGreen = exports.FgRed = exports.Reset = void 0;
+exports.FgBlue = exports.FgYellow = exports.FgGreen = exports.FgRed = exports.Reset = void 0;
 const Reset = '\x1b[0m';
 exports.Reset = Reset;
 const Bright = '\x1b[1m';
@@ -18,7 +18,9 @@ exports.FgRed = FgRed;
 const FgGreen = '\x1b[32m';
 exports.FgGreen = FgGreen;
 const FgYellow = '\x1b[33m';
+exports.FgYellow = FgYellow;
 const FgBlue = '\x1b[34m';
+exports.FgBlue = FgBlue;
 const FgMagenta = '\x1b[35m';
 const FgCyan = '\x1b[36m';
 const FgWhite = '\x1b[37m';

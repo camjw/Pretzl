@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.toHaveBeenEaten = void 0;
+exports.toHaveBeenEatenMatcher = void 0;
 
 var _colour = require("../colour");
 
-const toHaveBeenEaten = (obj, method) => {
+const toHaveBeenEatenMatcher = (obj, method) => {
   if (obj._count[method] > 0) {
     console.log(_colour.FgGreen, 'Yum!', _colour.Reset);
   } else {
@@ -17,5 +17,4 @@ const toHaveBeenEaten = (obj, method) => {
   obj._resetCount(method);
 };
 
-exports.toHaveBeenEaten = toHaveBeenEaten;
-toHaveBeenEaten(a, method1);
+exports.toHaveBeenEatenMatcher = toHaveBeenEatenMatcher;
