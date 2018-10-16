@@ -1,6 +1,9 @@
+import { FgGreen, FgRed, Reset } from '../colour';
+
 export const toEqual = (a, b) => {
   if (a === b) {
-    return true;
+    console.log(FgGreen, 'Yum!', Reset);
+  } else {
+    console.log(FgRed, `Yuck! Expected ${a} to equal ${b}`, Reset);
   }
-  throw new Error(`Not equal. Expected ${a} to equal ${b}`);
 };
