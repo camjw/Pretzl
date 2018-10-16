@@ -4,8 +4,8 @@ export class Bagel {
     this._count = {};
 
     methods.forEach(method => {
-      this.stub(method[0], method[1])
       this._resetCount(method[0])
+      this.stub(method[0], method[1])
     });
 
     if (variables) {
