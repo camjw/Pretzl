@@ -2,18 +2,16 @@ import { toEqual as toEqualMatcher } from './matchers/toEqual';
 import { toHaveBeenEatenMatcher } from './matchers/toHaveBeenCalled';
 
 export class Expectation {
-  constructor(operand, operand2 = null) {
+  constructor(operand, secondOperand) {
     this.operand = operand;
-    this.operand2 = operand2
+    this.secondOperand = secondOperand;
   }
 
   toEqual(outcome) {
     return toEqualMatcher(this.operand, outcome);
   }
 
-
-
   toHaveBeenEaten() {
-    return toHaveBeenEatenMatcher(this.operand, this.operand2)
+    return toHaveBeenEatenMatcher(this.operand, this.secondOperand)
   }
 }

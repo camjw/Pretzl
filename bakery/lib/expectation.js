@@ -10,9 +10,9 @@ var _toEqual = require("./matchers/toEqual");
 var _toHaveBeenCalled = require("./matchers/toHaveBeenCalled");
 
 class Expectation {
-  constructor(operand, operand2 = null) {
+  constructor(operand, secondOperand) {
     this.operand = operand;
-    this.operand2 = operand2;
+    this.secondOperand = secondOperand;
   }
 
   toEqual(outcome) {
@@ -20,7 +20,7 @@ class Expectation {
   }
 
   toHaveBeenEaten() {
-    return (0, _toHaveBeenCalled.toHaveBeenEatenMatcher)(this.operand, this.operand2);
+    return (0, _toHaveBeenCalled.toHaveBeenEatenMatcher)(this.operand, this.secondOperand);
   }
 
 }
