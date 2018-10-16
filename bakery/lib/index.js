@@ -29,8 +29,8 @@ var _bagel = require("./bagel");
 
 var _describe = require("./describe");
 
-const bite = operand => {
-  return new _expectation.Expectation(operand);
+const bite = (operand, secondOperand = null) => {
+  return new _expectation.Expectation(operand, secondOperand);
 };
 
 exports.bite = bite;

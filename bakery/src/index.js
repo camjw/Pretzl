@@ -5,8 +5,8 @@ import { bag } from './describe';
 
 
 
-const bite = operand => {
-  return new Expectation(operand);
+const bite = (operand, secondOperand = null) => {
+  return new Expectation(operand, secondOperand);
 };
 
 export { Bagel, bite, batch, bag }
