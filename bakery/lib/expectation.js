@@ -15,7 +15,7 @@ class Expectation {
     this.secondOperand = secondOperand;
   }
 
-  toEqual(outcome) {
+  toTasteLike(outcome) {
     return (0, _toEqual.toEqual)(this.operand, outcome);
   }
 

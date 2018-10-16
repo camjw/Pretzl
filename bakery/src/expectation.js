@@ -7,7 +7,7 @@ export class Expectation {
     this.secondOperand = secondOperand;
   }
 
-  toEqual(outcome) {
+  toTasteLike(outcome) {
     return toEqualMatcher(this.operand, outcome);
   }
 
