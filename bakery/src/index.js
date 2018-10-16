@@ -1,5 +1,8 @@
-import { expectation as ex } from './expectation';
+import { Expectation } from './expectation';
+import { Bagel } from './bagel';
 
-export const bite = operand => {
-  return new ex.Expectation(operand);
+const bite = operand => {
+  return new Expectation(operand);
 };
+
+export { Bagel, bite }
