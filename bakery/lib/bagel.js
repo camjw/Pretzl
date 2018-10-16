@@ -12,8 +12,12 @@ class Bagel {
     this._name = name;
     this._count = {};
     methods.forEach(method => {
-      this[method] = () => {
-        this._count[method]++;
+      this[method] = (test = false) => {
+        if (test) {
+          return this._count[method];
+        } else {
+          this._count[method]++;
+        }
       };
 
       this._count[method] = 0;

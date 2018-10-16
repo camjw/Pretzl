@@ -10,6 +10,6 @@ export class Expectation {
   }
 
   toHaveBeenEaten() {
-    this.operand(false);
+    return toHaveBeenEatenMatcher(this.operand(true))
   }
 }

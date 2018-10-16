@@ -16,7 +16,9 @@ class Expectation {
     return (0, _toEqual.toEqual)(this.operand, outcome);
   }
 
-  toHaveBeenEaten() {}
+  toHaveBeenEaten() {
+    this.operand(true);
+  }
 
 }
 
