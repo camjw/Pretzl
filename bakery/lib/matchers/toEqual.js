@@ -5,11 +5,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.toEqual = void 0;
 
+var _colour = require("../colour");
+
 const toEqual = (a, b) => {
   if (a === b) {
-    console.log("Yum!");
+    console.log(_colour.FgGreen, 'Yum!', _colour.Reset);
   } else {
-    console.log(`Yuck! Expected ${a} to equal ${b}`);
+    console.log(_colour.FgRed, `Yuck! Expected ${a} to equal ${b}`, _colour.Reset);
   }
 };
 

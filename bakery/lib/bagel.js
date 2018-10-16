@@ -12,7 +12,7 @@ class Bagel {
     this._name = name;
     methods.forEach(method => {
       this[method] = () => {
-        console.log("You called" + method);
+        console.log(method);
       };
     });
   }
