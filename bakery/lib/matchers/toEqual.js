@@ -7,10 +7,10 @@ exports.toEqual = void 0;
 
 const toEqual = (a, b) => {
   if (a === b) {
-    return true;
+    console.log("Yum!");
+  } else {
+    console.log(`Yuck! Expected ${a} to equal ${b}`);
   }
-
-  throw new Error(`Not equal. Expected ${a} to equal ${b}`);
 };
 
 exports.toEqual = toEqual;
