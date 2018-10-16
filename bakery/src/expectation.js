@@ -8,4 +8,8 @@ export class Expectation {
   toEqual(outcome) {
     return toEqualMatcher(this.operand, outcome);
   }
+
+  toHaveBeenEaten() {
+    this.operand(false);
+  }
 }

@@ -1,10 +1,13 @@
-const { Bagel } = require('pretzl')
+const { bite } = require('pretzl');
+const { Bagel } = require('pretzl');
 
-let a = new Bagel("mock", ["method1", "method2"])
+let a = new Bagel('mock', ['method1', 'method2']);
 
-a.method1()
-a.method2()
-a.method2()
-a._resetCount("method2")
+a.method1();
+a.method2();
+a.method2();
+a._resetCount('method2');
 
-console.log(a._count)
+console.log(a._count);
+
+bite(a.method1).toHaveBeenEaten();

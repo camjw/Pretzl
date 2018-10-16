@@ -16,6 +16,8 @@ class Expectation {
     return (0, _toEqual.toEqual)(this.operand, outcome);
   }
 
+  toHaveBeenEaten() {}
+
 }
 
 exports.Expectation = Expectation;
