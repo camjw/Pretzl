@@ -1,5 +1,16 @@
 const fb = require('../lib/fizzbuzz.js');
 const { bite } = require('pretzl');
+const { beforeEach } = require('pretzl');
+const { runEveryBeforeEach } = require('pretzl');
+const { beforeEachStack } = require('pretzl');
+
+beforeEach(function() {
+  console.log('Hi')
+})
+
+runEveryBeforeEach(function() {
+
+})
 
 bite(fb.fizzBuzz(1)).toTasteLike(1);
 bite(fb.fizzBuzz(2)).toTasteLike(2);

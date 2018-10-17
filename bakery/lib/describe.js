@@ -9,6 +9,8 @@ var _colour = require("./colour");
 
 var _expectation = require("./expectation");
 
+var _seasonAll = require("./seasonAll");
+
 const batch = (title, cb) => {
   console.log(_colour.FgYellow, title, _colour.Reset);
   cb();
@@ -24,6 +26,7 @@ const bag = (title, cb) => {
 exports.bag = bag;
 
 const bite = (operand, secondOperand = null) => {
+  (0, _seasonAll.runEveryBeforeEach)();
   return new _expectation.Expectation(operand, secondOperand);
 };
 
