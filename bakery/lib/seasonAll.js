@@ -27,24 +27,9 @@ Object.defineProperty(exports, "bite", {
     return _describe.bite;
   }
 });
-Object.defineProperty(exports, "beforeEach", {
-  enumerable: true,
-  get: function get() {
-    return _seasonAll.beforeEach;
-  }
-});
-Object.defineProperty(exports, "runEveryBeforeEach", {
-  enumerable: true,
-  get: function get() {
-    return _seasonAll.runEveryBeforeEach;
-  }
-});
-Object.defineProperty(exports, "beforeEachStack", {
-  enumerable: true,
-  get: function get() {
-    return _seasonAll.beforeEachStack;
-  }
-});
+exports.beforeEachStack = exports.runEveryBeforeEach = exports.beforeEach = void 0;
+
+require("core-js/modules/web.dom.iterable");
 
 var _expectation = require("./expectation");
 
@@ -52,4 +37,19 @@ var _bagel = require("./bagel");
 
 var _describe = require("./describe");
 
-var _seasonAll = require("./seasonAll");
+// Runs every beforeEach callback in the stack
+const runEveryBeforeEach = () => {
+  beforeEachStack.forEach(level => level.forEach(cb => cb()));
+}; // The stack of beforeEach callbacks
+
+
+exports.runEveryBeforeEach = runEveryBeforeEach;
+const beforeEachStack = [[]];
+exports.beforeEachStack = beforeEachStack;
+let indentLevel = 0; // A simple and functional beforeEach implementation
+
+const beforeEach = cb => {
+  beforeEachStack[beforeEachStack.length - 1].push(cb);
+};
+
+exports.beforeEach = beforeEach;
