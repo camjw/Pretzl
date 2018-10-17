@@ -6,6 +6,6 @@ export const batch = (title, cb) => {
 };
 
 export const bag = (title, cb) => {
-  console.log(FgBlue,"\t", title, Reset);
+  console.log(FgBlue, title, Reset);
   cb();
 };
