@@ -4,19 +4,19 @@ const { Bagel,
         bite,
         batch,
         bag,
-        beforeEach,
-        runEveryBeforeEach,
-        beforeAll,
-        afterAll
+        preheatEach,
+        runEveryPreheatEach,
+        preheatAll,
+        cooldownAll
       } = require('pretzl');
 
 batch("tests for fizzbuzz", () => {
 
-  beforeAll(() => {
+  preheatAll(() => {
     console.log('hey')
   });
 
-  beforeEach(() => {
+  preheatEach(() => {
     console.log('Fuck JavaScript')
   });
 
@@ -36,7 +36,7 @@ batch("tests for fizzbuzz", () => {
     bite(fb.fizzBuzz(30)).toTasteLike('FizzBuzz');
   });
 
-  afterAll(() => {
+  cooldownAll(() => {
     console.log("You're my Wonderwall")
   })
 });

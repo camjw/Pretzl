@@ -2,11 +2,11 @@ const { bite } = require('pretzl');
 const { Bagel } = require('pretzl');
 const { batch } = require('pretzl');
 const { bag } = require('pretzl');
-const { beforeEach } = require('pretzl')
+const { preheatEach } = require('pretzl')
 
 const { toHaveBeenEatenMatcher } = require('../../bakery/lib/matchers/toHaveBeenCalled')
 
-beforeEach(function() {
+preheatEach(function() {
   console.log('Hi')
   let a = new Bagel('mock', [['method1', "hello"], ['method2']], [["variable1", "test"], ["variable2"]]);
 
