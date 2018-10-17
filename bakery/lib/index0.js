@@ -21,15 +21,16 @@ Object.defineProperty(exports, "bag", {
     return _describe.bag;
   }
 });
-Object.defineProperty(exports, "bite", {
-  enumerable: true,
-  get: function get() {
-    return _describe.bite;
-  }
-});
+exports.bite = void 0;
 
 var _expectation = require("./expectation");
 
 var _bagel = require("./bagel");
 
 var _describe = require("./describe");
+
+const bite = (operand, secondOperand = null) => {
+  return new _expectation.Expectation(operand, secondOperand);
+};
+
+exports.bite = bite;
