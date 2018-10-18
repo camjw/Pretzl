@@ -11,9 +11,9 @@ export const FgRed = '\x1b[31m';
 export const FgGreen = '\x1b[32m';
 export const FgYellow = '\x1b[33m';
 export const FgBlue = '\x1b[34m';
-const FgMagenta = '\x1b[35m';
-const FgCyan = '\x1b[36m';
-const FgWhite = '\x1b[37m';
+export const FgMagenta = '\x1b[35m';
+export const FgCyan = '\x1b[36m';
+export const FgWhite = '\x1b[37m';
 
 const BgBlack = '\x1b[40m';
 const BgRed = '\x1b[41m';

@@ -4,10 +4,13 @@ const { Bagel,
         bite,
         batch,
         bag,
+        nobag,
         preheatEach,
         runEveryPreheatEach,
         preheatAll,
-        cooldownAll
+        cooldownAll,
+        cooldownEach,
+        runEveryCooldownEach
       } = require('pretzl');
 
 batch("tests for fizzbuzz", () => {
@@ -36,7 +39,15 @@ batch("tests for fizzbuzz", () => {
     bite(fb.fizzBuzz(30)).toTasteLike('FizzBuzz');
   });
 
+  cooldownEach(() => {
+    console.log("Cooldown")
+  });
+
   cooldownAll(() => {
     console.log("You're my Wonderwall")
+  })
+
+  nobag('skip FizzBuzz test', () => {
+    bite(fb.fizzBuzz(1).toTasteLike(2));
   })
 });

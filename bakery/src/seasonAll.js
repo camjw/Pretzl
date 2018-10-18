@@ -1,21 +1,44 @@
 import { Expectation } from './expectation';
 import { Bagel } from './bagel';
-import { batch } from './describe';
-import { bag } from './describe';
-import { bite } from './describe';
+import { batch, bag, bite, nobag } from './describe';
 
-export { Bagel, bite, batch, bag, beforeEach, runEveryBeforeEach, beforeEachStack }
+export { Bagel,
+         bite,
+         batch,
+         bag,
+         nobag,
+         preheatEach,
+         runEveryPreheatEach,
+         preheatAll,
+         cooldownEach,
+         runEveryCooldownEach,
+         cooldownAll
+       }
 
-// Runs every beforeEach callback in the stack
-const runEveryBeforeEach = () => {
-  beforeEachStack.forEach((level) => level.forEach(cb => cb()));
+// preheat
+const preheatAll = cb => cb();
+
+const runEveryPreheatEach = () => {
+  preheatEachStack.forEach((level) => level.forEach(cb => cb()));
 };
 
-// The stack of beforeEach callbacks
-const beforeEachStack = [ [] ];
+const preheatEachStack = [ [] ];
 let indentLevel = 0;
 
-// A simple and functional beforeEach implementation
-const beforeEach = (cb) => {
-  beforeEachStack[beforeEachStack.length - 1].push(cb);
+const preheatEach = (cb) => {
+  preheatEachStack[preheatEachStack.length - 1].push(cb);
+};
+
+// cooldown
+const cooldownAll = cb => cb();
+
+const runEveryCooldownEach = () => {
+  cooldownEachStack.forEach((level) => level.forEach(cb => cb()));
+};
+
+const cooldownEachStack = [ [] ];
+let indentLevelCooldown = 0;
+
+const cooldownEach = (cb) => {
+  cooldownEachStack[cooldownEachStack.length - 1].push(cb);
 };
