@@ -21,11 +21,11 @@ export const bag = (title, cb) => {
 };
 
 export const nobag = (title, cb) => {
-  console.log(FgYellow, `${ ' Dropped your bagel! '}`, Reset)
+  console.log(FgYellow, 'Dropped your bagel!', Reset)
 }
 
 export const bite = (operand, secondOperand = null) => {
+  runEveryCooldownEach();
   runEveryPreheatEach();
   return new Expectation(operand, secondOperand);
-  runEveryCooldownEach();
 };

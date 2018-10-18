@@ -34,9 +34,9 @@ const nobag = (title, cb) => {
 exports.nobag = nobag;
 
 const bite = (operand, secondOperand = null) => {
+  (0, _seasonAll.runEveryCooldownEach)();
   (0, _seasonAll.runEveryPreheatEach)();
   return new _expectation.Expectation(operand, secondOperand);
-  (0, _seasonAll.runEveryCooldownEach)();
 };
 
 exports.bite = bite;
