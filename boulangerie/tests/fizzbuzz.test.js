@@ -4,6 +4,7 @@ const { Bagel,
         bite,
         batch,
         bag,
+        nobag,
         preheatEach,
         runEveryPreheatEach,
         preheatAll,
@@ -38,5 +39,9 @@ batch("tests for fizzbuzz", () => {
 
   cooldownAll(() => {
     console.log("You're my Wonderwall")
+  })
+
+  nobag('skip FizzBuzz test', () => {
+    bite(fb.fizzBuzz(1).toTasteLike(2));
   })
 });
