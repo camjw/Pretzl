@@ -27,7 +27,13 @@ Object.defineProperty(exports, "bite", {
     return _describe.bite;
   }
 });
-exports.beforeEachStack = exports.runEveryBeforeEach = exports.beforeEach = void 0;
+Object.defineProperty(exports, "nobag", {
+  enumerable: true,
+  get: function get() {
+    return _describe.nobag;
+  }
+});
+exports.cooldownAll = exports.runEveryCooldownEach = exports.cooldownEach = exports.preheatAll = exports.runEveryPreheatEach = exports.preheatEach = void 0;
 
 require("core-js/modules/web.dom.iterable");
 
@@ -37,19 +43,40 @@ var _bagel = require("./bagel");
 
 var _describe = require("./describe");
 
-// Runs every beforeEach callback in the stack
-const runEveryBeforeEach = () => {
-  beforeEachStack.forEach(level => level.forEach(cb => cb()));
-}; // The stack of beforeEach callbacks
+// preheat
+const preheatAll = cb => cb();
 
+exports.preheatAll = preheatAll;
 
-exports.runEveryBeforeEach = runEveryBeforeEach;
-const beforeEachStack = [[]];
-exports.beforeEachStack = beforeEachStack;
-let indentLevel = 0; // A simple and functional beforeEach implementation
-
-const beforeEach = cb => {
-  beforeEachStack[beforeEachStack.length - 1].push(cb);
+const runEveryPreheatEach = () => {
+  preheatEachStack.forEach(level => level.forEach(cb => cb()));
 };
 
-exports.beforeEach = beforeEach;
+exports.runEveryPreheatEach = runEveryPreheatEach;
+const preheatEachStack = [[]];
+let indentLevel = 0;
+
+const preheatEach = cb => {
+  preheatEachStack[preheatEachStack.length - 1].push(cb);
+}; // cooldown
+
+
+exports.preheatEach = preheatEach;
+
+const cooldownAll = cb => cb();
+
+exports.cooldownAll = cooldownAll;
+
+const runEveryCooldownEach = () => {
+  cooldownEachStack.forEach(level => level.forEach(cb => cb()));
+};
+
+exports.runEveryCooldownEach = runEveryCooldownEach;
+const cooldownEachStack = [[]];
+let indentLevelCooldown = 0;
+
+const cooldownEach = cb => {
+  cooldownEachStack[cooldownEachStack.length - 1].push(cb);
+};
+
+exports.cooldownEach = cooldownEach;

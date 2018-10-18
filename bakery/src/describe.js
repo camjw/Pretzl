@@ -1,18 +1,31 @@
-import { FgYellow, FgBlue, Reset } from './colour';
+import { FgYellow, FgBlue, FgMagenta, FgCyan, Reset } from './colour';
 import { Expectation } from './expectation';
-import { runEveryBeforeEach} from './seasonAll';
+import { runEveryPreheatEach,
+         preheatAll,
+         cooldownEach,
+         runEveryCooldownEach,
+         cooldownAll } from './seasonAll';
 
 export const batch = (title, cb) => {
-  console.log(FgYellow, title, Reset);
+  console.log(FgMagenta, title, Reset);
+  preheatAll(() => {
+  });
   cb();
+  cooldownAll(() => {
+  });
 };
 
 export const bag = (title, cb) => {
-  console.log(FgBlue, title, Reset);
+  console.log(FgCyan, title, Reset);
   cb();
 };
 
+export const nobag = (title, cb) => {
+  console.log(FgYellow, `${ ' Dropped your bagel! '}`, Reset)
+}
+
 export const bite = (operand, secondOperand = null) => {
-  runEveryBeforeEach();
+  runEveryPreheatEach();
   return new Expectation(operand, secondOperand);
+  runEveryCooldownEach();
 };
