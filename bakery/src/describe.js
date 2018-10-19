@@ -17,12 +17,13 @@ export const batch = (title, cb) => {
 
 export const bag = (title, cb) => {
   console.log(FgCyan, title, Reset);
+  runEveryPreheatEach();
   cb();
 };
 
 export const nobag = (title, cb) => {
   console.log(FgYellow, 'Dropped your bagel!', Reset)
-}
+};
 
 export const bite = (operand, secondOperand = null) => {
   runEveryCooldownEach();
