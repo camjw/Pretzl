@@ -20,8 +20,16 @@ batch("tests for fizzbuzz", () => {
   });
 
   preheatEach(() => {
-    console.log('Fuck JavaScript')
+    console.log('Hello')
   });
+
+  cooldownEach(() => {
+    console.log("Cooldown")
+  });
+
+  cooldownAll(() => {
+    console.log("You're my Wonderwall")
+  })
 
   bag('FizzBuzz tests', () => {
     bite(fb.fizzBuzz(1)).toTasteLike(1);
@@ -38,14 +46,6 @@ batch("tests for fizzbuzz", () => {
     bite(fb.fizzBuzz(29)).toTasteLike(29);
     bite(fb.fizzBuzz(30)).toTasteLike('FizzBuzz');
   });
-
-  cooldownEach(() => {
-    console.log("Cooldown")
-  });
-
-  cooldownAll(() => {
-    console.log("You're my Wonderwall")
-  })
 
   nobag('skip FizzBuzz test', () => {
     bite(fb.fizzBuzz(1).toTasteLike(2));

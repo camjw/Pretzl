@@ -9,9 +9,9 @@ var _colour = require("../colour");
 
 const toEqual = (a, b) => {
   if (a === b) {
-    console.log(_colour.FgGreen, 'Yum!', _colour.Reset);
+    console.log(_colour.FgGreen, '🥨 Yum!', _colour.Reset);
   } else {
-    console.log(_colour.FgRed, `Yuck! Expected ${a} to taste like ${b}`, _colour.Reset);
+    console.log(_colour.FgRed, `Yuck! Expected ${a} (${typeof a}) to taste like ${b} (${typeof b})`, _colour.Reset);
   }
 };
 
