@@ -22,13 +22,14 @@ exports.batch = batch;
 
 const bag = (title, cb) => {
   console.log(_colour.FgCyan, title, _colour.Reset);
+  (0, _seasonAll.runEveryPreheatEach)();
   cb();
 };
 
 exports.bag = bag;
 
 const nobag = (title, cb) => {
-  console.log(_colour.FgYellow, `${' Dropped your bagel! '}`, _colour.Reset);
+  console.log(_colour.FgYellow, 'Dropped your bagel!', _colour.Reset);
 };
 
 exports.nobag = nobag;

@@ -16,20 +16,16 @@ const { Bagel,
 batch("tests for fizzbuzz", () => {
 
   preheatAll(() => {
-    console.log('hey')
+    console.log('Preheating...')
   });
 
   preheatEach(() => {
-    console.log('Hello')
+    console.log('Preheating each pretzel')
   });
 
   cooldownEach(() => {
-    console.log("Cooldown")
+    console.log("Cooling down each pretzel")
   });
-
-  cooldownAll(() => {
-    console.log("You're my Wonderwall")
-  })
 
   bag('FizzBuzz tests', () => {
     bite(fb.fizzBuzz(1)).toTasteLike(1);
@@ -49,5 +45,9 @@ batch("tests for fizzbuzz", () => {
 
   nobag('skip FizzBuzz test', () => {
     bite(fb.fizzBuzz(1).toTasteLike(2));
+  })
+
+  cooldownAll(() => {
+    console.log("Cooled down all pretzels")
   })
 });
